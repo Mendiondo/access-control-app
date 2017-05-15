@@ -1,0 +1,24 @@
+<div >
+  <md-toolbar color="primary">
+    <span>
+      <md-icon class="icon-20">perm_identity</md-icon>
+      Access Control App
+    </span>
+    <button md-icon-button [md-menu-trigger-for]="menu">
+      <md-icon>more_vert</md-icon>
+    </button>
+  </md-toolbar>
+  <md-menu x-position="before" #menu="mdMenu">
+    <button md-menu-item [routerLink]="['/home']">
+      <md-icon>home</md-icon>
+      <span>Home</span>
+    </button>
+    <button md-menu-item (click)="logout()">
+      <md-icon>exit_to_app</md-icon>
+      <span>Logut</span>
+    </button>
+  </md-menu>
+  <md-sidenav-container>
+    <router-outlet></router-outlet>
+  </md-sidenav-container>
+</div>
