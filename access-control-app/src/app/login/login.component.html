@@ -1,0 +1,18 @@
+<form name="form" (ngSubmit)="login()" #loginForm="ngForm">
+  <p>
+    <md-input-container class="input-container">
+       <input mdInput name="userName" placeholder="User Name" [(ngModel)]="user.userName" required>
+       <md-error>User Name required</md-error>
+    </md-input-container>
+  </p>
+  <p>
+    <md-input-container class="input-container">
+       <input mdInput name="password" placeholder="Password" [(ngModel)]="user.password" [type]="showPassword.checked ? 'text' : 'password'" required>
+       <md-error>Password is required</md-error>
+    </md-input-container>
+    <md-checkbox #showPassword>Show password</md-checkbox>
+  </p>
+  <p>
+    <button md-button class="background-primary-color white-text" type="submit" [disabled]="!loginForm.form.valid" >Login</button>
+  </p>
+</form>
